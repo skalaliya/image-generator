@@ -1,0 +1,19 @@
+<Page class="page">
+  <ActionBar title="Image Generator" class="action-bar"></ActionBar>
+  <GridLayout rows="*, auto">
+    <ScrollView row="0">
+      <StackLayout class="p-4">
+        <StackLayout *ngFor="let image of generatedImages" class="mb-4">
+          <Image [src]="image.url" class="w-full rounded-lg"></Image>
+          <Label [text]="image.prompt" class="text-sm text-gray-600 mt-2" textWrap="true"></Label>
+        </StackLayout>
+        <ActivityIndicator [busy]="isLoading" class="m-4"></ActivityIndicator>
+        <Label [text]="errorMessage" *ngIf="errorMessage" class="text-red-500 m-4" textWrap="true"></Label>
+      </StackLayout>
+    </ScrollView>
+    <GridLayout row="1" columns="*, auto" class="input-bar p-2">
+      <TextField col="0" [(ngModel)]="prompt" hint="Enter your prompt" returnKeyType="send" (returnPress)="generateImage()" class="input rounded-lg p-2 bg-gray-100"></TextField>
+      <Button col="1" text="Send" (tap)="generateImage()" class="btn btn-primary rounded-lg ml-2"></Button>
+    </GridLayout>
+  </GridLayout>
+</Page>

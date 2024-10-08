@@ -1,0 +1,27 @@
+.page {
+  background-color: #f0f0f0;
+}
+
+.action-bar {
+  background-color: #3498db;
+  color: white;
+}
+
+.input-bar {
+  background-color: white;
+  border-top-width: 1;
+  border-top-color: #e0e0e0;
+}
+
+.input {
+  font-size: 16;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+ScrollView {
+  background-color: #f0f0f0;
+}
